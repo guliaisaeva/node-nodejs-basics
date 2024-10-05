@@ -8,11 +8,15 @@ const pathToFile = path.join(__dirname,'files','fresh.txt')
 console.log(pathToFile)
 const create = async () => {
 try {
-    await fs.access(filePath);
+    await fs.access(pathToFile);
     throw new Error('FS operation failed')
 } catch (error) {
     if(error.code ==="ENOENT"){
-console.log(fileContent)    }
+await fs.writeFile(pathToFile,fileContent)
+console.log("File content created!It is inside files folder.") }
+else{
+    throw new Error('FS operation failed' + error.message);
+}
 
 }};
 
