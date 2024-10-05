@@ -17,7 +17,6 @@ console.log("File content created!It is inside files folder.") }
 else{
     throw new Error('FS operation failed' + error.message);
 }
-
 }};
 
 await create();
