@@ -12,9 +12,7 @@ This repository contains several tasks to learn the basics of Node.js
 
 ### Running the `create.js` Task
 1. **Directly from the Command Line:**
-
    node src/fs/create.js
-
 2. **Using Script from package.json :**
    npm run fs:create
 
