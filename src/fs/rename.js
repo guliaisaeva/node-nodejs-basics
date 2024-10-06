@@ -11,7 +11,10 @@ const properFilePath = path.join(__dirname,"files","properFilename.md");
 console.log(properFilePath)
 
 const rename = async () => {
-    // Write your code here
-};
+try {
+    await fs.access(wrongFilePath);
+} catch (error) {
+    throw new Error ("Fs operation failed")
+}};
 
 await rename();
