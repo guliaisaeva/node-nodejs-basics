@@ -23,7 +23,8 @@ try {
         throw new Error ("Fs operation failed" + error.message)
     }
 }
-
+await fs.rename (wrongFilePath,properFilePath);
+console.log("File renamed to properFilename.md!It is inside files folder.")
 
 };
 
