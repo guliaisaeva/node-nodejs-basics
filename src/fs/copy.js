@@ -4,9 +4,8 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename);
-//from
+
 const pathToFileFolder = path.join(__dirname,"files");
-//to
 const pathToFilesCopyFolder = path.join(__dirname, "files_copy");
 
 const copy = async () => {
