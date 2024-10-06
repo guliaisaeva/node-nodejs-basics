@@ -4,7 +4,6 @@ import { release, version } from 'os';
 import { createServer as createServerHttp } from 'http';
 import './files/c.js';
 
-
 const random = Math.random();
 
 let unknownObject;
