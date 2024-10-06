@@ -6,15 +6,25 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const wrongFilePath = path.join(__dirname,"files","wrongFilename.txt");
-console.log(wrongFilePath)
 const properFilePath = path.join(__dirname,"files","properFilename.md");
-console.log(properFilePath)
 
 const rename = async () => {
 try {
     await fs.access(wrongFilePath);
 } catch (error) {
     throw new Error ("Fs operation failed")
-}};
+}
+try {
+    await fs.access(properFilePath);
+    throw new Error ("Fs operation failed")
+
+} catch (error) {
+    if(error.code !=="ENOENT"){
+        throw new Error ("Fs operation failed" + error.message)
+    }
+}
+
+
+};
 
 await rename();
