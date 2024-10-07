@@ -6,10 +6,11 @@ const write = async () => {
 const filePath = path.join(process.cwd(), 'src/streams/files/fileToWrite.txt');
 const writeStream = createWriteStream(filePath);
 process.stdin.pipe(writeStream);
-writeStream.on('finish', () => {
-    console.log('Data successfully written to fileToWrite.txt');
+
+  writeStream.on('error', (error) => {
+    console.error(`Error writing to file: ${error.message}`);
   });
-    } catch (error) {
+  } catch (error) {
         console.error(`Error writing to file: ${error.message}`)
     }
 
