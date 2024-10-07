@@ -9,6 +9,13 @@ const read = async () => {
     readStream.on('data', (chunk) => {
         process.stdout.write(chunk);
       });
+    readStream.on('end', () => {
+        console.log('\nFile reading completed.');
+      });
+    readStream.on('error', (error) => {
+        console.error(`Error reading file: ${error.message}`);
+      });
+
   } catch (error) {
     console.error(`Error reading file: ${error.message}`);
   }
